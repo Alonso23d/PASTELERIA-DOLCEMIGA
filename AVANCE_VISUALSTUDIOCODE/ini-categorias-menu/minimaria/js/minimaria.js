@@ -1,0 +1,139 @@
+// ======================
+// LÓGICA DEL CARRITO PARA DECORACION.JS
+// ======================
+
+// Cargar el carrito desde localStorage o inicializarlo vacío
+let productosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+// Elementos del DOM necesarios
+const carrito = document.getElementById('carrito');
+const listaProductos = document.querySelector('.container-items');
+const listaCarrito = document.querySelector('#lista-carrito tbody');
+const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+
+// Cargar todos los event listeners
+cargarEventListeners();
+document.addEventListener('DOMContentLoaded', renderizarCarrito);
+
+function cargarEventListeners() {
+    // Delegación de evento: botón Agregar al carrito
+    listaProductos.addEventListener('click', agregarProducto);
+
+    // Evento para eliminar producto del carrito (delegación)
+    carrito.addEventListener('click', eliminarElemento);
+
+    // Evento para vaciar el carrito
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+}
+
+// =============================
+// Agregar Producto
+// =============================
+function agregarProducto(e) {
+    if (e.target.classList.contains('agregar-carrito')) {
+        e.preventDefault(); // Evitamos que el enlace recargue o siga por defecto
+
+        // Obtener la URL del href (informacion.html o informacion2.html o informacion3.html)
+        const url = e.target.getAttribute('href');
+
+        // Redirigir a la URL definida en el href
+        window.location.href = url;
+    }
+}
+
+
+function eliminarElemento(e) {
+    if (e.target.classList.contains('borrar')) {
+        const productoId = e.target.getAttribute('data-id');
+        productosCarrito = productosCarrito.filter(prod => prod.id !== productoId);
+        guardarCarritoLocalStorage();
+        renderizarCarrito();
+    }
+}
+
+function vaciarCarrito() {
+    productosCarrito = [];
+    guardarCarritoLocalStorage();
+    renderizarCarrito();
+}
+
+function guardarCarritoLocalStorage() {
+    localStorage.setItem('carrito', JSON.stringify(productosCarrito));
+}
+
+function renderizarCarrito() {
+    listaCarrito.innerHTML = '';
+    productosCarrito.forEach(producto => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><img src="${producto.imagen}" width="50"></td>
+            <td>${producto.titulo}</td>
+            <td>${producto.precio}</td>
+            <td>${producto.cantidad}</td>
+            <td><a href="#" class="borrar" data-id="${producto.id}">X</a></td>
+        `;
+        listaCarrito.appendChild(row);
+    });
+}
+
+// Mostrar/ocultar carrito al hacer clic en el ícono
+const imgCarrito = document.getElementById('img-carrito');
+imgCarrito.addEventListener('click', function(e) {
+    e.stopPropagation();
+    carrito.style.display = carrito.style.display === 'block' ? 'none' : 'block';
+    renderizarCarrito();
+});
+
+document.addEventListener('click', function() {
+    carrito.style.display = 'none';
+});
+
+carrito.addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+
+// ...existing code...
+
+const productos = [
+  { nombre: "Minimaria de cheesecake de frutos rojos", archivo: "../html/informacion30.html", imagen: "../img/30.png" },
+  { nombre: "Minimaria casera turrón de chocolate", archivo: "../html/informacion31.html", imagen: "../img/31.png" },
+  { nombre: "Minimariabruselina de vainilla con fresa", archivo: "../html/informacion32.html", imagen: "../img/32.png" },
+  { nombre: "Minimaria con trozos de chocolate", archivo: "../html/informacion33.html", imagen: "../img/33.png" },
+  { nombre: "Minimaria merengado de lúcuma", archivo: "../html/informacion34.html", imagen: "../img/34.png" },
+  { nombre: "Minimaria merengado de chirimoya", archivo: "../html/informacion35.html", imagen: "../img/35.png" },
+];
+
+const searchInput = document.getElementById('search-input');
+const resultados = document.getElementById('resultados-busqueda');
+
+if (searchInput && resultados) {
+  searchInput.addEventListener('input', function() {
+    const query = searchInput.value.toLowerCase();
+    resultados.innerHTML = '';
+    if (query.length === 0) {
+      resultados.style.display = 'none';
+      return;
+    }
+    const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(query));
+    if (filtrados.length === 0) {
+      resultados.innerHTML = '<div class="resultado-item">No se encontraron productos</div>';
+      resultados.style.display = 'block';
+      return;
+    }
+    filtrados.forEach(p => {
+      const item = document.createElement('div');
+      item.className = 'resultado-item';
+      item.innerHTML = `<img src="${p.imagen}" alt="${p.nombre}">${p.nombre}`;
+      item.onclick = () => window.location.href = p.archivo;
+      resultados.appendChild(item);
+    });
+    resultados.style.display = 'block';
+  });
+
+  // Ocultar resultados al hacer clic fuera
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !resultados.contains(e.target)) {
+      resultados.style.display = 'none';
+    }
+  });
+}

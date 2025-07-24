@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Boleta de Compra</title>
+   <link rel="stylesheet" href="boleta.css">
+</head>
+<body>
+    <div class="boleta">
+        <h2>Boleta de Compra</h2>
+        <h3>DOLCE MIGA </h3>
+        <div class="detalle">
+            <p><strong>Cliente:</strong> <span id="cliente"></span></p>
+            <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+            <p><strong>Hora:</strong> <span id="hora"></span></p>
+            <p><strong>Número de Orden:</strong> #<span id="orden"></span></p>
+            <p><strong>Forma de Pago:</strong> <span id="metodo-pago"></span></p>
+
+<div id="qr-yape-container" style="display: none;">
+    <p>Escanea este código QR para completar tu pago con Yape:</p>
+    <img src="imagenesblog/YAPE.jpg" alt="QR Yape" width="200">
+</div>
+
+            <hr>
+            <p><strong>Detalle:</strong></p>
+            <ul id="detalle-productos"></ul>
+
+            <p class="total">Total: S/ <span id="total"></span></p>
+        </div>
+
+        <button class="btn-imprimir" onclick="window.print()">Imprimir Boleta</button>
+        <p class="nota">Consejo: Conservar hasta recibir los productos  <em>"Guardar"</em> Mostrar en caja .</p>
+    </div>
+<script src="boleta.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const metodoPago = localStorage.getItem('metodoPago');
+    document.getElementById('metodo-pago').textContent = metodoPago;
+
+    if (metodoPago === 'Yape') {
+        document.getElementById('qr-yape-container').style.display = 'block';
+    }
+});
+</script>
+</body>
+</html>

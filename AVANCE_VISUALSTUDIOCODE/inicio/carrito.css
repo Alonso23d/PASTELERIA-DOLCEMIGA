@@ -1,0 +1,245 @@
+/* Importación de la tipografía desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna y elegante */
+    background-color: #fff; /* Fondo blanco limpio */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2 {
+    color: #C0392B; /* Rojo oscuro para los encabezados */
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 40px;
+    font-weight: 600; /* Peso de fuente más pesado para darle protagonismo */
+    border-bottom: 2px solid #C0392B; /* Borde inferior en rojo */
+    padding-bottom: 10px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff; /* Fondo blanco para la tabla */
+    border: 2px solid #ddd; /* Borde sutil alrededor de la tabla */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Borde sutil entre celdas */
+}
+
+th {
+    background-color: #F8BBD0; /* Fondo rosa suave para la cabecera */
+    color: #C0392B; /* Texto en rojo oscuro */
+    font-weight: bold;
+    border-top: 2px solid #ddd; /* Borde superior para la cabecera */
+}
+
+td {
+    background-color: #fff; /* Fondo blanco para las celdas */
+    border-top: 1px solid #ddd; /* Borde superior en las celdas */
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+button {
+    padding: 12px 30px;
+    background-color: #C0392B; /* Rojo suave para los botones */
+    color: white;
+    border: 2px solid #C0392B; /* Borde rojo alrededor del botón */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #B03A2E; /* Rojo más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+button:active {
+    background-color: #C0392B; /* Color sólido al presionar */
+}
+
+button#volver-btn {
+    background-color: #C0392B; /* Color crema suave para el botón de "Volver" */
+    border: 2px solid #C0392B; /* Borde gris claro */
+}
+
+
+
+#total {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #C0392B; /* Rojo oscuro para el total */
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el total */
+    border-radius: 8px;
+    border: 2px solid #ddd; /* Borde más definido */
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #ddd; /* Borde definido */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+input[type="number"]:focus {
+    border: 2px solid #C0392B; /* Borde rojo al enfocar */
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 40%;
+        position: relative;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 2em;
+    }
+
+    #total {
+        font-size: 1.2em;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+#mensaje-exito {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(43, 220, 75); 
+    color: white;
+    padding: 15px 25px;         /* más pequeño */
+    border-radius: 10px;        /* redondeado pero más ajustado */
+    font-size: 16px;            
+    z-index: 9999;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    max-width: 90%;             /* evita que sea muy ancho en pantallas pequeñas */
+}
+ /* ESTILO DE MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.opcion-pago {
+  display: block;
+    margin: 10px auto;
+    padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+#modal-pago {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: white;
+    padding: 30px;
+    border: 2px solid #f3f6f9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+#modal-pago.visible {
+    display: block;
+}

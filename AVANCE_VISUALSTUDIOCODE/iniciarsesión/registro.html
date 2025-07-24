@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro Modal</title>
+  <link rel="stylesheet" href="estilosregistro.css" />
+</head>
+<body>
+
+  <!-- Modal -->
+  <div class="modal" id="modalRegistro">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h2>Regístrate</h2>
+      <form id="formRegistro">
+        <div class="campo-doble">
+          <input type="text" placeholder="Nombre" required />
+          <input type="text" placeholder="Apellido" required />
+        </div>
+        <input type="tel" placeholder="Número de teléfono" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" id="contrasena" placeholder="Contraseña" required />
+
+        <ul class="validaciones">
+          <li id="largo">❌ como mínimo 8 caracteres</li>
+          <li id="mayus">❌ al menos una mayúscula</li>
+          <li id="minus">❌ al menos una letra minúscula</li>
+          <li id="numero">❌ al menos un número</li>
+          <li id="especial">❌ al menos un carácter especial</li>
+        </ul>
+
+        <label>
+          <input type="checkbox" /> Quisiera recibir promociones y descuentos
+        </label>
+
+        <button type="submit" class="btn-registrar">Registrar</button>
+        <p id="mensajeExito" style="display: none; color: green; font-weight: bold; text-align: center;">
+            Registro exitoso
+        </p>
+
+        <a href="iniciarsesión.html" class="btn-volver">Volver a iniciar sesión</a>
+
+
+      </form>
+    </div>
+  </div>
+
+  <script src="registro.js"></script>
+</body>
+</html>
