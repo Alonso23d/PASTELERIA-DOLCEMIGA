@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cumpleaños ! Dolce Miga</title>
+  <link rel="stylesheet" href="../css/minimaria.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <!--Encabezado principal-->
+  <header>
+    <div class="top-nav">
+      <a href="../../../inicio/Ini.html" class="logo">Dolce Miga</a>
+
+      <!-- Contenedor para el campo de búsqueda-->
+     <div class="search-container">
+  <form onsubmit="event.preventDefault();">
+    <input type="search" placeholder="Buscar productos..." id="search-input">
+    <button type="submit">
+      <i class="bi bi-search-heart-fill"></i><!-- Ícono de búsqueda -->
+    </button>
+  </form>
+  <div id="resultados-busqueda" class="resultados-popup" style="display:none;"></div>
+</div>
+
+      <div class="idioma-carrito">
+           <form>
+             <!-- Reemplazamos el botón con el ícono -->
+             <a href="../../../iniciarsesión/iniciarsesión.html"><i class="bi bi-person-circle"></i></a>
+           </form>
+
+           <!-- Reemplazamos el botón con el ícono -->
+           <div>
+                <ul>    
+                    <li class="submenu">
+                       <i class="bi bi-cart" id="img-carrito"></i>
+                          <div id="carrito" class="carrito-oculto">
+                              <h3>Mi Carrito</h3>
+                                <table id="lista-carrito">
+                                  <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                       <th></th>
+                                    </tr>
+                                   </thead>
+                                   <tbody></tbody>                               
+                                </table>
+                                <a href="../../../inicio/carrito.html" id="ver-carrito" class="btn-2" target="_blank">Ver Carrito</a>
+                                <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+
+
+      </div>
+    </div>
+
+        <!-- Menú de categorías -->
+    <nav class="categorias">
+      <div class="categorias-menu">
+        <button class="menu-toggle" id="menu-toggle">☰</button> 
+        <div class="menu-items" id="menu-items">
+          <a href="../../cumpleaños/html/cumpleaños.html">cumpleaños</a>
+          <a href="../../tortas/html/tortas.html">tortas</a>
+          <a href="#" class="activo">minimaria</a>
+          <a href="../../decoración/html/decoracion.html">decoracion</a>
+          <a href="../../cookies/html/cookies.html">cookies</a>
+          <a href="../../porciones/html/porciones.html">porciones</a>
+          <a href="../../keke/html/keke.html">kekes</a>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <div class="titulito" id="cumpleaños">
+    <h2>Minimaria</h2>
+  </div>
+  <div class="subtitulito">
+    <h3>4 porciones, 11cms de diámetro</h3>
+  </div>
+
+ 
+  <div class="container-items">
+
+            <div class="ofert-1">
+              <figure>
+                <img src="../img/30.png" width=100%>
+              </figure>
+                <div class="product-txt">
+                    <h3> Minimaria de cheesecake de frutos rojos</h3>
+                    <p>Cheesecake de frutos rojo horneados sobre una base de galleta</p>
+                    <p class="precio">s/ 49.90</p>
+                    <a href="../html/informacion30.html" class="agregar-carrito btn-3" data-id="20">Agregar</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+              <figure>
+                <img src="../img/31.png" alt="">
+              </figure>
+                <div class="product-txt">
+                    <h3>Minimaria casera turrón de chocolate</h3>
+                    <p>Tres capas de turrón de chocolate con crocantes trocitos de pecana</p>
+                    <p class="precio">s/ 52.90</p>
+                    <a href="../html/informacion31.html" class="agregar-carrito btn-3" data-id="21">Agregar</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+              <figure>
+                <img src="../img/32.png" alt="">
+              </figure>
+                <div class="product-txt">
+                    <h3>Minimariabruselina de vainilla con fresa</h3>
+                    <p>porción de esponjosos bizcochos de manzana</p>
+                    <p class="precio">s/ 52.90</p>
+                    <a href="../html/informacion32.html" class="agregar-carrito btn-3" data-id="22">Agregar</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+              <figure>
+                <img src="../img/33.png" alt="">
+              </figure>
+                <div class="product-txt">
+                    <h3>Minimaria con trozos de chocolate</h3>
+                    <p>La favorita en versión mini. Bizcochuelo húmedo de chocolate
+                    </p>
+                    <p class="precio">s/ 52.90</p>
+                    <a href="../html/informacion33.html" class="agregar-carrito btn-3" data-id="23">Agregar</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+              <figure>
+                <img src="../img/34.png" alt="">
+              </figure>
+                <div class="product-txt">
+                    <h3>Minimaria merengado de lúcuma</h3>
+                    <p>3 discos de crocante merengue, con fudge, rellenos con capas de crema</p>
+                    <p class="precio">s/ 49.90</p>
+                    <a href="../html/informacion34.html" class="agregar-carrito btn-3" data-id="24">Agregar</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+              <figure>
+                <img src="../img/35.png" alt="">
+              </figure>
+                <div class="product-txt">
+                    <h3>Minimaria merengado de chirimoya</h3>
+                    <p>Discos de merengue rellenos con chirimoya sobre una capa de manjar</p>
+                    <p class="precio">s/ 49.90</p>
+                    <a href="../html/informacion35.html" class="agregar-carrito btn-3" data-id="24">Agregar</a>
+                </div>
+            </div>
+
+  </div>
+
+<footer class="footer">
+    <div class="footer-container container">
+        <div class="footer-section">
+            <h3>Mapa del sitio</h3>
+            <ul>
+                <li><a href="">Nuestra carta</a></li>
+                <li><a href="quienesomos.html">Nosotros</a></li>
+                <li><a href="">Catering</a></li>
+                <li><a href="">Nuestras casas</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="">Cumpleaños</a></li>
+                <li><a href="">Catering</a></li>
+                <li><a href="">Tortas</a></li>
+                <li><a href="">Minimaria</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Legales</h3>
+            <ul>
+                <li><a href="">Políticas de privacidad</a></li>
+                <li><a href="">Terminos y condiciones</a></li>
+                <li><a href="">Preguntas frecuentes</a></li>
+                <li><a href="">Derechos arco</a></li>
+            </ul>
+        </div>
+
+
+        
+        <div class="footer-section">
+            <h3>Síguenos a través de:</h3>
+            <div class="social-icons">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+
+            <div class="reclamaciones">
+                <a href="#"><i class="bi biclamaciones"></i></a>
+            </div>
+                
+            
+        </div>
+    </div>
+</footer>
+
+<!--conexion a el java script-->
+    <script src="../js/minimaria.js"></script>
+</body>
+
+</html>

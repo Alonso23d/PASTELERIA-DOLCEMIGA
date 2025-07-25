@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="carrito.css" />
+   
+</head>
+<body>
+    <h1>Productos en tu carrito</h1>
+
+    <table id="tabla-carrito">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2 id="total">Total: S/ 0.00</h2>
+
+    <button id="comprar-btn">Comprar</button>
+  <button id="volver-btn">Volver al inicio</button>
+
+
+<!-- Modal de pago -->
+
+<div id="modal-pago" style="display:none; position:fixed; z-index:1000; background:white; padding:20px;">
+  <h3>Selecciona el método de pago</h3>
+  <button class="opcion-pago" data-metodo="Yape">Yape</button>
+  <button class="opcion-pago" data-metodo="Efectivo">Efectivo</button>
+</div>
+
+
+
+<script src="carrito.js"></script>
+
+</body>
+</html>

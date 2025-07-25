@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+/* General */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background: linear-gradient(
+        90deg,
+        rgba(241,237,220,1) 0%,
+        rgba(255,255,253,1) 50%,
+        rgba(252,246,232,1) 100%
+    );
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(
+        90deg,
+        rgba(241,237,220,1) 0%,
+        rgba(255,255,253,1) 50%,
+        rgba(252,246,232,1) 100%
+    );
+  border-bottom: 1px solid #ddd;
+}
+
+.logo{
+    font-size: 36px;
+    font-weight: 700;
+    color: red;
+    font-family: 'Dancing Script', cursive;
+  white-space: nowrap; /* evita que se rompa en dos líneas */
+  min-width: max-content;
+  text-align: center;
+  text-decoration: none;
+
+}
+.nav-links a {
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+  font-weight: bold;
+  font-size: 17px;
+  padding: 20px;
+  display: block;
+  font-family: 'Anton', sans-serif;
+}
+nav ul li a:hover {
+  color: #e60909;
+}
+
+
+/* Layout 50% / 50% */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 80px); /* 100% de alto menos el header */
+}
+
+/* Cuadro de inicio de sesión */
+.login-container {
+  flex: 1;
+  background: linear-gradient(
+        90deg,
+        rgba(241,237,220,1) 0%,
+        rgba(255,255,253,1) 50%,
+    );
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.login-container h2 {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  width: 100%;
+  max-width: 400px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+button {  
+  width: 100%;  
+  padding: 12px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+button:hover {
+  background: darkred;
+}
+
+.registro {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.registro a {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registro a:hover {
+  text-decoration: underline;
+}
+
+
+.mensaje {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Carrusel - lado derecho */
+.carousel-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+        90deg,
+        rgba(255,255,253,1) 50%,
+        rgba(252,246,232,1) 100%
+    );
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+}
+
+.carousel-track img {
+  width: 100%;
+  max-width: 600px;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+/* Animación al pasar mouse */
+.carousel-container:hover .carousel-track {
+  animation: carruselAnimado 6s infinite linear;
+}
+
+@keyframes carruselAnimado {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-600px); }
+  50% { transform: translateX(-1100px); }
+  75% { transform: translateX(-1650px); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive para móviles */
+@media (max-width: 991px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .login-container,
+  .carousel-container {
+    flex: none;
+    width: 100%;
+    height: auto;
+    padding: 0px 0px;
+  }
+
+  .carousel-track img {
+    max-width: 90%;
+    height: auto;
+  }
+}

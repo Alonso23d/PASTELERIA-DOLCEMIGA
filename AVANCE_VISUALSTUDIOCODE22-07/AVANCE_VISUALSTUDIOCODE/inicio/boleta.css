@@ -1,0 +1,26 @@
+body { 
+            font-family: Arial, sans-serif; margin: 40px; }
+        .boleta {
+            max-width: 600px; margin: auto;
+            border: 2px solid #222; padding: 30px;
+            border-radius: 10px;
+        }
+        h2 { text-align: center; color: #333; }
+        .detalle { margin-top: 30px; }
+        .detalle p { margin: 5px 0; }
+        .total {
+            font-size: 20px; font-weight: bold;
+            margin-top: 20px; text-align: right;
+        }
+        .btn-imprimir {
+            display: block; margin: 30px auto;
+            padding: 10px 20px; background-color: #28a745;
+            color: white; border: none; border-radius: 8px;
+            cursor: pointer; font-size: 16px;
+        }
+        .btn-imprimir:hover { background-color: #218838; }
+        .nota {
+            text-align: center; margin-top: 30px;
+            color: #555;
+        }
+    h3 { text-align: center; color: #333; }

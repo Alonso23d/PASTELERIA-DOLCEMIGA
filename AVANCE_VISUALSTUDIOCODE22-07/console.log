@@ -1,0 +1,34 @@
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // Depuración: Imprimir valores ingresados y lista de usuarios válidos
+  console.log("Email ingresado:", email); // Muestra el correo ingresado por el usuario
+  console.log("Password ingresado:", password); // Muestra la contraseña ingresada por el usuario
+  console.log("Usuarios válidos:", usuariosValidos); // Muestra la lista de usuarios válidos para comparar
+
+  const usuarioValido = usuariosValidos.find(
+    (usuario) => usuario.email === email && usuario.password === password
+  );
+
+  if (usuarioValido) {
+    mensaje.textContent = "¡Bienvenido!";
+    mensaje.style.color = "green";
+    intentos = 0;
+
+    setTimeout(() => {
+      window.location.href = "../inicio/Ini.html";
+    }, 1000);
+  } else {
+    intentos++;
+    if (intentos >= 3) {
+      alert("Has excedido los intentos. No puedes ingresar.");
+      form.querySelector("button[type='submit']").disabled = true;
+    } else {
+      mensaje.textContent = `Intento inválido. Te quedan ${3 - intentos} intento(s).`;
+      mensaje.style.color = "red";
+    }
+  }
+});

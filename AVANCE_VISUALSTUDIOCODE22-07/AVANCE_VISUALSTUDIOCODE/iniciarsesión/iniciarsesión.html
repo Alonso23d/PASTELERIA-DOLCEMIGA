@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="estilosiniciarsesión.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <header>
+        <a href="../inicio/Ini.html" class="logo">Dolce Miga</a>
+        <nav class="nav-links">
+           <a href="../ini-categorias-menu/cumpleaños/html/cumpleaños.html"><i class="bi bi-journal-text"></i> Nuestra carta</a>
+           <a href="#blog"><i class="bi bi-pencil-square"></i> Blog</a>
+           <a href="#"><i class="bi bi-people-fill"></i> Nosotros</a>
+           <a href="../NuestrasCasas/nuestrascasas.html"><i class="bi bi-people-fill"></i> Nuestras Casas</a>
+        </nav>
+     </header>
+  
+  
+  <div class="main-container">
+   <!-- Cuadro de inicio de sesión (izquierda) -->
+   <div class="login-container">
+      <h2>INICIAR SESIÓN</h2>
+      <form id="loginForm" action="login.php" method="post">
+        <input type="text" name="usuario" placeholder="Usuario" required><br>
+        <input type="password" name="contrasena" placeholder="Contraseña" required><br>
+        <button type="submit">Iniciar Sesión</button><br><br>
+        <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
+
+    </form>
+      <p id="mensaje" class="mensaje"></p>
+   </div>
+ 
+   <div class="carousel-container">
+     <div class="carousel-track">
+        <img src="image/postre1.jpg" alt="Postre 1" />
+        <img src="image/postre2.jpg" alt="Postre 2" />
+        <img src="image/postre3.jpg" alt="Postre 3" />
+        <img src="image/postre4.jpg" alt="Postre 4" />
+        <img src="image/postre1.jpg" alt="Postre 1" />
+      </div>
+    </div>
+  </div>
+
+  <script src="iniciarsesión.js"></script>
+</body>
+</html>
